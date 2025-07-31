@@ -113,7 +113,7 @@ Visit `http://localhost:3000`
   "crons": [
     {
       "path": "/api/cron/currency",
-      "schedule": "0 * * * *"
+      "schedule": "0 0 * * *"
     }
   ]
 }
