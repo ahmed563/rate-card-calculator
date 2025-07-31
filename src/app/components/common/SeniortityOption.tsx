@@ -40,7 +40,7 @@ export default function SeniorityOptions({
 
   return (
     <div>
-      <label className="flex items-center text-sm gap-2 text-gray-700 dark:text-zinc-300 mb-2 block">
+      <label className="flex items-center text-sm font-semibold gap-2 text-gray-600 dark:text-zinc-300 mb-2 block">
         <TrendingUp className="w-4 h-4" />
         Seniority Level
       </label>

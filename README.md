@@ -18,7 +18,7 @@ A modern, responsive pricing calculator built with **Next.js 14**, **Supabase**,
 
 ## 🚀 Live Demo
 
-🌐 [View Deployed App on Vercel](https://your-app-url.vercel.app)
+🌐 [View Deployed App on Vercel](https://rate-card-calculator-ten.vercel.app/)
 
 ---
 
@@ -81,7 +81,7 @@ NEXT_PUBLIC_CURRENCY_API_KEY=your_currency_api_key
 git clone https://github.com/stackaxiom/rate-card-calculator.git
 cd rate-card-calculator
 npm install
-cp .env.local.example .env.local
+cp .env.example .env
 # Add your environment variables
 npm run dev
 ```
@@ -127,16 +127,3 @@ Visit `http://localhost:3000`
 - VSCode + ESLint + Prettier
 
 ---
-
-## 📹 Video Demo
-
-Include a screen recording showing:
-
-- Full walkthrough of both calculators
-- Currency switching in action
-- Email sent confirmation (toast)
-- PDF download flow
-- Mobile responsiveness demo
-
----
-

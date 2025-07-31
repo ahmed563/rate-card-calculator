@@ -41,20 +41,20 @@ export default function EmailModal({
   const [isLoading, setIsLoading] = useState(false);
 
   const isValidEmail = (email: string) => {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-  return regex.test(email);
-};
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    return regex.test(email);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  if (!email) {
-    toast.error("Email is required");
-    return;
-  }
-  if (!isValidEmail(email)) {
-    toast.error("Please enter a valid email address");
-    return;
-  }
+    if (!email) {
+      toast.error("Email is required");
+      return;
+    }
+    if (!isValidEmail(email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
 
     setIsLoading(true);
 
@@ -85,16 +85,16 @@ export default function EmailModal({
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       )
       .then(
-    (response) => {
-      toast.success("Rate sent to your email!");
-      setIsLoading(false);
-      closeEmailModal();
-    },
-    (error) => {
-      toast.error("Failed to send email. Please try again.");
-      console.error("Error sending email:", error);
-      setIsLoading(false);
-    }
+        (response) => {
+          toast.success("Rate sent to your email!");
+          setIsLoading(false);
+          closeEmailModal();
+        },
+        (error) => {
+          toast.error("Failed to send email. Please try again.");
+          console.error("Error sending email:", error);
+          setIsLoading(false);
+        }
       );
   };
 

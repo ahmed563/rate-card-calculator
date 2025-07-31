@@ -65,12 +65,12 @@ export default function SearchableRegionSelect({
 
   return (
     <div>
-      <label className="flex items-center text-sm gap-2 text-gray-700 dark:text-zinc-300 mb-2 block">
+      <label className="flex items-center text-sm font-semibold gap-2 text-gray-600 dark:text-zinc-300 mb-2 block">
         <MapPin className="w-4 h-4" />
         Region
       </label>
       <Select value={selectedRegion} onValueChange={handleChange}>
-        <SelectTrigger className="w-full py-6 bg-button rounded-lg">
+        <SelectTrigger className="w-full py-5 bg-button rounded-lg">
           <SelectValue placeholder="Select Region" />
         </SelectTrigger>
         <SelectContent>
@@ -83,15 +83,15 @@ export default function SearchableRegionSelect({
             />
           </div>
           {filteredRegions.map((region) => (
-  <SelectItem key={region.id} value={region.name}>
-    {region.name}
-  </SelectItem>
-))}
-{filteredRegions.length === 0 && (
-  <div className="px-4 py-2 text-muted-foreground text-sm">
-    No results found.
-  </div>
-)}
+            <SelectItem key={region.id} value={region.name}>
+              {region.name}
+            </SelectItem>
+          ))}
+          {filteredRegions.length === 0 && (
+            <div className="px-4 py-2 text-muted-foreground text-sm">
+              No results found.
+            </div>
+          )}
 
         </SelectContent>
       </Select>

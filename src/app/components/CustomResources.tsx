@@ -22,14 +22,16 @@ const CustomResource = forwardRef(function CustomResource(
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
   const [selectedSeniority, setSelectedSeniority] = useState<SeniorityLevel | null>(null);
   const [selectedRegion, setSelectedRegion] = useState<Region | null>(null);
-
+  // custom hook
   const finalRate = useCustomRateCalculator(
     selectedRole,
     selectedSeniority,
     selectedRegion,
     selectedCurrency
   );
-
+  // Expose internal state values to parent component via ref,
+  // allowing the parent to access selected options and finalRate 
+  // when needed for email .
   useImperativeHandle(ref, () => ({
     getCustomData: () => ({
       selectedRole,
@@ -41,7 +43,7 @@ const CustomResource = forwardRef(function CustomResource(
   }));
 
   return (
-    <div className="bg-calc-light dark:bg-calc-dark text-foreground p-6 rounded-xl shadow-lg w-full max-w-4xl mx-auto space-y-6 border border-border">
+    <div className="bg-calc-light dark:bg-calc-dark text-foreground p-6 rounded-xl w-full max-w-4xl mx-auto space-y-6 border border-border">
       <header>
         <h1 className="text-2xl font-bold">Custom Resource Calculator</h1>
         <p className="text-sm text-muted-foreground mt-1">
@@ -61,8 +63,8 @@ const CustomResource = forwardRef(function CustomResource(
 
       <div className="pt-2 flex justify-end">
         <div className="text-right">
-          <p className="text-muted-foreground text-sm">Calculated Rate:</p>
-          <p className="font-semibold text-4xl text-blue-400 dark:text-blue-400">
+          <p className="text-muted-foreground text-sm">Monthly Rate:</p>
+          <p className="font-semibold text-3xl text-blue-600 dark:text-blue-400 font-semibold ">
             {selectedCurrency?.currency || "AED"}{" "}
             {finalRate.toLocaleString(undefined, { maximumFractionDigits: 0 })}
           </p>

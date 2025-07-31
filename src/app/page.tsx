@@ -95,12 +95,12 @@ export default function Home() {
       </div>
 
       {/* Tabs */}
-      <div className="flex space-x-2 bg-gray-200 dark:bg-neutral-800 p-1 rounded-full mb-8 w-full sm:w-3/4 md:w-2/3 lg:w-1/2">
+      <div className="flex space-x-2 bg-gray-200 dark:bg-neutral-800 h-12 p-1 rounded-full mb-8 w-full max-w-4xl">
         <button
           onClick={() => setActiveTab("shared")}
           className={`cursor-pointer px-4 py-2 rounded-full flex items-center justify-center gap-2 transition text-sm font-bold w-1/2 ${activeTab === "shared"
-              ? "bg-white dark:bg-neutral-700 text-blue-500 dark:text-blue-400"
-              : "text-gray-600 dark:text-gray-300"
+            ? "bg-white dark:bg-neutral-700 text-blue-500 dark:text-blue-400 shadow-md"
+            : "text-gray-600 dark:text-gray-300"
             }`}
         >
           <Users className="w-5 h-5" />
@@ -109,8 +109,8 @@ export default function Home() {
         <button
           onClick={() => setActiveTab("custom")}
           className={`cursor-pointer px-4 py-2 rounded-full flex items-center justify-center gap-2 transition text-sm font-bold w-1/2 ${activeTab === "custom"
-              ? "bg-white dark:bg-neutral-700 text-blue-500 dark:text-blue-400"
-              : "text-gray-600 dark:text-gray-300"
+            ? "bg-white dark:bg-neutral-700 text-blue-500 dark:text-blue-400 shadow-md"
+            : "text-gray-600 dark:text-gray-300"
             }`}
         >
           <Calculator className="w-5 h-5" />
@@ -119,7 +119,7 @@ export default function Home() {
       </div>
 
       {/* Render both, toggle visibility */}
-      <div className="w-full max-w-4xl">
+      <div className="w-full max-w-4xl shadow-lg rounded-xl">
         <div style={{ display: activeTab === "shared" ? "block" : "none" }}>
           <MemoizedSwatCalculator ref={swatRef} selectedCurrency={selectedCurrency} />
         </div>

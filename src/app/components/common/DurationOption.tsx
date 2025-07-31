@@ -32,7 +32,7 @@ export default function DurationOptions({
 
   return (
     <div>
-      <label className="flex items-center text-sm gap-2 text-gray-700 dark:text-zinc-300 mb-2 block">
+      <label className="flex items-center text-sm font-semibold gap-2 text-gray-600 dark:text-zinc-300 mb-2 block">
         <CalendarDays className="w-4 h-4" />
         Duration
       </label>

@@ -64,15 +64,15 @@ export default function RoleSelect({
 
   return (
     <div>
-    <label className="flex items-center text-sm gap-2 text-gray-700 dark:text-zinc-300 mb-2 block">
+      <label className="flex items-center text-sm font-semibold gap-2 text-gray-600 dark:text-zinc-300 mb-2 block">
         <Briefcase className="w-4 h-4" />
-          Role
+        Role
       </label>
       <Select
         value={selectedRole}
         onValueChange={handleChange}
       >
-        <SelectTrigger className="w-full py-6 bg-button rounded-lg">
+        <SelectTrigger className="w-full py-5 bg-button rounded-lg">
           <SelectValue placeholder="Select Role" />
         </SelectTrigger>
         <SelectContent>

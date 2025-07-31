@@ -21,8 +21,12 @@ const SwatCalculator = forwardRef(function SwatCalculator(
     durationDiscount,
     setDurationDiscount,
     finalRate,
+    // custom hook
   } = useSwatCalculator(selectedCurrency);
 
+  // Expose internal state values to parent component via ref,
+  // allowing the parent to access selected options and finalRate 
+  // when needed for email .
   useImperativeHandle(ref, () => ({
     getSwatData: () => ({
       selectedRole,
@@ -56,8 +60,8 @@ const SwatCalculator = forwardRef(function SwatCalculator(
 
       <div className="pt-2 flex justify-end">
         <div className="text-right">
-          <p className="text-muted-foreground text-sm">Monthly Rate:</p>
-          <p className="font-semibold text-4xl text-blue-400 dark:text-blue-400">
+          <p className="text-muted-foreground text-sm font-semibold ">Monthly Rate:</p>
+          <p className="font-bold text-3xl text-blue-600 dark:text-blue-400">
             {selectedCurrency?.currency}{" "}
             {finalRate.toLocaleString(undefined, { maximumFractionDigits: 0 })}
           </p>
